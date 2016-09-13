@@ -9,8 +9,15 @@ class Exhibition extends React.Component {
 
     }
 
+  componentDidMount() {
+      this.setState({
+        courses: [{name: 'React', description: 'Its a course'}, {name: 'Javascript', description: 'Learn the basics'}],
+      });
+    }
+
 
     render() {
+
         return (
           <div>
             <h3>
@@ -18,7 +25,7 @@ class Exhibition extends React.Component {
             </h3>
             <p>
               {this.props.description}
-            </p>    
+            </p>
           </div>
         )
     }

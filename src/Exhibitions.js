@@ -3,18 +3,21 @@ import jQuery from 'jquery'
 import Exhibition from './Exhibition'
 
 
+
 class Exhibitions extends React.Component {
     constructor() {
         super();
 
-        this.state = {
-            exhibitions: [
-              {title: 'Random', description: 'A lot of paintings'},
-              {title: 'Again', description: 'Some more paintings'}
-            ]
-        };
     }
 
+    componentDidMount() {
+
+      jQuery.get("http://localhost:3001/exhibitions.json", (function(data){
+          this.setState({
+            exhibitions: data,
+          });
+        }).bind(this));
+      }
 
     renderExhibition(exhibition, index) {
         return <Exhibition
