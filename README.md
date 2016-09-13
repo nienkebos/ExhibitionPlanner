@@ -1,5 +1,5 @@
 # Exhibition Planner
-This is an app to store information about planned exhibitions. In this planner an admin can The API is build with Rails, the front-end is made with ReactJS.
+This is an app to store information about planned exhibitions. This exhibition planner is build with React on a Rails backend.
 
 
 ## Database
@@ -23,9 +23,13 @@ This is an app to store information about planned exhibitions. In this planner a
   * Define the models
   * Create the controllers
   * Add CarrierWave and Cloudinary
+  * Add Rack CORS
+  * Write seeds
 2 Set up a React project with the React Starter
   * npm install
   * npm install jquery --save
+  * Create a form Component
+  * Look for file upload in ReactJS
 
 
 
