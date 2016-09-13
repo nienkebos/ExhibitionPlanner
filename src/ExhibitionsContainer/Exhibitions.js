@@ -3,21 +3,18 @@ import jQuery from 'jquery'
 import Exhibition from './Exhibition'
 
 
-
 class Exhibitions extends React.Component {
     constructor() {
-        super();
-
+      super();
     }
 
     componentDidMount() {
-
-      jQuery.get("http://localhost:3001/exhibitions.json", (function(data){
-          this.setState({
-            exhibitions: data,
-          });
+        jQuery.get("http://localhost:3001/exhibitions.json", (function(data){
+            this.setState({
+              exhibitions: data,
+            });
         }).bind(this));
-      }
+    }
 
     renderExhibition(exhibition, index) {
         return <Exhibition
@@ -28,20 +25,15 @@ class Exhibitions extends React.Component {
     }
 
     render() {
-
-      return (
-        <div>
-          <h1>Exhibition Planner</h1>
-
-            <div style = {{ width: '216px' }}>
-              {this.state.exhibitions.map(this.renderExhibition.bind(this))}
-            </div>
-
-        </div>
-      )
+        return (
+          <div>
+            <h1>Exhibition Planner</h1>
+              <div style = {{ width: '500px' }}>
+                {this.state.exhibitions.map(this.renderExhibition.bind(this))}
+              </div>
+          </div>
+        )
     }
-
-
 
 }
 

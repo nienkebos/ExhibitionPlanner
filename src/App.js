@@ -1,21 +1,14 @@
 import React from 'react';
-import ExhibitionForm from './ExhibitionForm';
-import Exhibitions from './Exhibitions';
+import ExhibitionsContainer from './ExhibitionsContainer/ExhibitionsContainer';
+
 
 
 class App extends React.Component {
 
-
-
     render() {
         return (
           <div>
-            <div>
-              <Exhibitions />
-            </div>
-            <div>
-              <ExhibitionForm />
-            </div>
+              <ExhibitionsContainer />
           </div>
         );
     }

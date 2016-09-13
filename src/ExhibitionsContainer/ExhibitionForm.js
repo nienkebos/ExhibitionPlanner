@@ -4,9 +4,31 @@ import jQuery from 'jquery'
 
 class ExhibitionForm extends React.Component {
 
-    createExhibition(){
-      
-    }
+    createExhibition(e){
+        e.preventDefault();
+
+        let newExhibition = {
+          title: this.refs.title.value,
+          description: this.refs.description.value
+        };
+
+        jQuery.ajax({
+          type: "POST",
+          url: "http://localhost:3001/exhibitions.json",
+          data: JSON.stringify({
+            exhibition: newExhibition
+          }),
+          contentType: "application/json",
+          dataType: "json"
+
+        }).done(function( data ) {
+          console.log('successfully added',data);
+        })
+        .fail(function(error) {
+          console.log(error);
+        });
+      }
+
 
     render() {
         return (
