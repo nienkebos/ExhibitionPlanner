@@ -4,11 +4,19 @@ import Exhibitions from './Exhibitions';
 
 
 class App extends React.Component {
+
+
+
     render() {
         return (
-            <Exhibitions />,
-            <ExhibitionForm />
-
+          <div>
+            <div>
+              <Exhibitions />
+            </div>
+            <div>
+              <ExhibitionForm />
+            </div>
+          </div>
         );
     }
 }

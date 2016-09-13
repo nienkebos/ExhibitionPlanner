@@ -3,25 +3,24 @@ import jQuery from 'jquery'
 
 
 class Exhibition extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
-        this.state = {
-            exhibitions: [{title: 'Random', description: 'A lot of paintings'}, {title: 'Again', description: 'Some more paintings'}],
-        };
+
     }
 
 
-
     render() {
-      const { exhibition } = this.props
-
-      return(
-        <div>
-          <p>{this.props.exhibition.title}</p>
-          <p>{this.props.exhibition.description}</p>
-        </div>
-      )
+        return (
+          <div>
+            <h3>
+              {this.props.title}
+            </h3>
+            <p>
+              {this.props.description}
+            </p>    
+          </div>
+        )
     }
 
 }

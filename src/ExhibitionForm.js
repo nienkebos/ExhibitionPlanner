@@ -4,13 +4,12 @@ import jQuery from 'jquery'
 
 class ExhibitionForm extends React.Component {
 
-
+    createExhibition(){
+      
+    }
 
     render() {
-
-
         return (
-
           <form onSubmit={this.createExhibition.bind(this)}>
             <input
               type="text"
