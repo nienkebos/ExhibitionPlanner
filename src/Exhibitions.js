@@ -33,7 +33,7 @@ class Exhibitions extends React.Component {
         <div>
           <h1>Exhibition Planner</h1>
 
-            <div style = {{ width: '216px' }}>
+            <div style = {{ width: '500px' }}>
               {this.state.exhibitions.map(this.renderExhibition.bind(this))}
             </div>
 
