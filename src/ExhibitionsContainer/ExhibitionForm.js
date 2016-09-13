@@ -13,38 +13,31 @@ const buttonStyle = {
 
 class ExhibitionForm extends React.Component {
 
-    loadData() {
-      jQuery.get("http://localhost:3001/exhibitions.json", (function(data){
-        this.setState({
-          exhibitions: data.exhibitions,
-        });
-      }).bind(this));
-    }
-
     createExhibition(e){
-      e.preventDefault();
+        e.preventDefault();
 
-          let newExhibition = {
-            title: this.refs.title.value,
-            description: this.refs.description.value
-          };
+        let newExhibition = {
+          title: this.refs.title.value,
+          description: this.refs.description.value
+        };
 
-          jQuery.ajax({
-            type: "POST",
-            url: "http://localhost:3001/exhibitions.json",
-            data: JSON.stringify({
-              exhibition: newExhibition
-            }),
-            contentType: "application/json",
-            dataType: "json"
+        jQuery.ajax({
+          type: "POST",
+          url: "http://localhost:3001/exhibitions.json",
+          data: JSON.stringify({
+            exhibition: newExhibition
+          }),
+          contentType: "application/json",
+          dataType: "json"
 
-          }).done(function( data ) {
-            alert( "Data saved: " + data );
-          })
-          .fail(function(error) {
-            console.log(error);
-          });
-    }
+        }).done(function( data ) {
+          console.log('successfully added',data);
+        })
+        .fail(function(error) {
+          console.log(error);
+        });
+      }
+
 
     render() {
         return (

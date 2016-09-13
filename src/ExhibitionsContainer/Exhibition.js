@@ -5,10 +5,7 @@ import jQuery from 'jquery'
 class Exhibition extends React.Component {
     constructor() {
         super();
-
-
     }
-
 
     render() {
         return (
@@ -18,7 +15,7 @@ class Exhibition extends React.Component {
             </h3>
             <p>
               {this.props.description}
-            </p>    
+            </p>
           </div>
         )
     }
