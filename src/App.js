@@ -1,8 +1,6 @@
 import React from 'react';
 
 //COMPONENTS//
-import ExhibitionsContainer from './ExhibitionsContainer/ExhibitionsContainer';
-import ArtworksContainer from './ArtworksContainer/ArtworksContainer';
 import Header from './TemplateContainer/Header';
 import Footer from './TemplateContainer/Footer';
 
