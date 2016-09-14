@@ -1,6 +1,14 @@
 import React from 'react';
 import jQuery from 'jquery'
 
+//STYLES//
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton';
+
+const buttonStyle = {
+  float: 'right',
+  marginLeft: '2rem',
+}
 
 class ExhibitionForm extends React.Component {
 
@@ -32,29 +40,38 @@ class ExhibitionForm extends React.Component {
 
     render() {
         return (
-          <form onSubmit={this.createExhibition.bind(this)}>
-            <input
-              type="text"
-              className="form-control"
-              ref="title"
-              placeholder="What is the title of the exhibition?"
-            />
-            <input
-              type="text"
-              className="form-control"
-              ref="date"
-              placeholder="When is the exhibition planned?"
-            />
-            <textarea
-              className="form-control"
-              ref="description"
-              placeholder="Describe the exhibition..">
-            </textarea>
-            <button
+          <form onSubmit={this.createExhibition.bind(this)} >
+            <div>
+              <TextField
+                type="title"
+                className="form-control"
+                ref="title"
+                hintText="What is the title of the exhibition?" />
+            </div>
+
+            <div>
+              <TextField
+                type="date"
+                className="form-control"
+                ref="date"/>
+            </div>
+
+            <div>
+              <TextField
+                type="text"
+                className="form-control"
+                ref="description"
+                hintText="Describe the exhibition.."
+                multiLine={true}
+                rows={2}
+                rowsMax={30}/>
+            </div>
+
+            <RaisedButton
               type="submit"
               className="btn btn-primary">
               Create Exhibition
-            </button>
+            </RaisedButton>
           </form>
 
         );

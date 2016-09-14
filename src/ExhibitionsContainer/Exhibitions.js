@@ -28,9 +28,9 @@ class Exhibitions extends React.Component {
         return (
           <div>
             <h1>Exhibition Planner</h1>
-              <div style = {{ width: '500px' }}>
-                {this.state.exhibitions.map(this.renderExhibition.bind(this))}
-              </div>
+            <div>
+              {this.state.exhibitions.map(this.renderExhibition.bind(this))}
+            </div>
           </div>
         )
     }
