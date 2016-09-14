@@ -5,11 +5,6 @@ import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
 
-const optionsStyle = {
-  maxWidth: 255,
-  marginRight: 'auto',
-};
-
 class ArtworkForm extends React.Component {
 
     createArtwork(e){
@@ -19,12 +14,15 @@ class ArtworkForm extends React.Component {
           artist: this.refs.artist.getValue(),
           title: this.refs.title.getValue(),
           date: this.refs.date.getValue(),
+          technique: this.technique.date.getValue(),
           description: this.refs.description.getValue()
         };
 
+        let id = parseInt(this.props.id);
+
         jQuery.ajax({
           type: "POST",
-          url: "http://localhost:3001/exhibitions/1/artworks",
+          url: "http://localhost:3001/exhibitions/"+id+"/artworks",
           data: JSON.stringify({
             artwork: newArtwork
           }),
@@ -57,6 +55,14 @@ class ArtworkForm extends React.Component {
               className="form-control"
               ref="title"
               hintText="What is the title of this work?"
+              fullWidth={true}
+            /><br /><br />
+
+            <TextField
+              type="text"
+              className="form-control"
+              ref="technique"
+              hintText="Wich techniques where used?"
               fullWidth={true}
             /><br /><br />
 

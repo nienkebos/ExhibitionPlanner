@@ -24,17 +24,3 @@ ReactDOM.render(
       </Router>
     </MuiThemeProvider>,
 document.getElementById('root'));
-
-//
-//
-// ReactDOM.render((
-//   <Router history={browserHistory}>
-//     <Route path="/" component={App}>                           // everything will be under the `App` component
-//       <IndexRoute component={Welcome} />                       // the `Welcome` component will be rendered on `/`
-//       <Route path="/projects" component={Projects}/>           // the `Projects` component will be rendered on `/projects`
-//       <Route path="/project/:projectId" component={Project}/>  // the `Project` component will be rendered on `/project/<id>`
-//       <Route path="/about" component={About}/>                 // the `About` component will be rendered on `/about`
-//       <Route path="*" component={PageNotFound}/>               // all other routes will render `PageNotFound`
-//     </Route>
-//   </Router>
-// ), document.getElementById('root'));
