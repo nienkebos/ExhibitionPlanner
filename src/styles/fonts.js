@@ -1,5 +1,5 @@
 export default {
   sansSerif: '"Alegreya Sans", sans-serif',
-  smallSize: '10px'
+  smallSize: '50px'
 
 };

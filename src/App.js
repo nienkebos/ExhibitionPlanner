@@ -1,22 +1,22 @@
 import React from 'react';
 import ExhibitionsContainer from './ExhibitionsContainer/ExhibitionsContainer';
+import HeaderContainer from './TemplateContainer/HeaderContainer';
+import FooterContainer from './TemplateContainer/FooterContainer';
 
 //STYLES//
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import BaseTheme from './styles/baseTheme'
 import {GridList, GridTile} from 'material-ui/GridList';
-import { Grid, Row, Cell } from 'react-inline-grid';
 
 
 class App extends React.Component {
 
     render() {
         return (
-          <Grid>
           <div>
+              <HeaderContainer />
               <ExhibitionsContainer />
+              <FooterContainer />
           </div>
-          </Grid>
         );
     }
 }

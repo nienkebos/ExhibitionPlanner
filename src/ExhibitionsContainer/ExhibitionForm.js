@@ -5,7 +5,6 @@ import jQuery from 'jquery'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
 
-
 const buttonStyle = {
   float: 'right',
   marginLeft: '2rem',
@@ -41,7 +40,7 @@ class ExhibitionForm extends React.Component {
 
     render() {
         return (
-          <form onSubmit={this.createExhibition.bind(this)}>
+          <form onSubmit={this.createExhibition.bind(this)} >
             <div>
               <TextField
                 type="title"
