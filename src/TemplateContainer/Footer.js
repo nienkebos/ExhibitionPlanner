@@ -8,7 +8,12 @@ const styles = {
     padding: 25,
     clear: 'both',
     backgroundColor: '#ccc',
-    fontFamily: '"Alegreya Sans", sans-serif',
+    position: 'relative',
+  },
+  text: {
+    position: 'absolute',
+    right: 25,
+    top: 15,
   }
 }
 
@@ -17,7 +22,7 @@ class Footer extends React.Component {
     render() {
         return (
           <footer style={styles.footer}>
-            <span className="copyright">Made by Nienke</span>
+            <span className="copyright" style={styles.text}>Made by Nienke - 2016 </span>
           </footer>
         );
     }
