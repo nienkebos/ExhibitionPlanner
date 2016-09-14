@@ -10,12 +10,13 @@ const optionsStyle = {
   marginRight: 'auto',
 };
 
-class ExhibitionForm extends React.Component {
+class ArtworkForm extends React.Component {
 
-    createExhibition(e){
+    createArtwork(e){
         e.preventDefault();
 
-        let newExhibition = {
+        let newArtwork = {
+          artist: this.refs.artist.getValue(),
           title: this.refs.title.getValue(),
           date: this.refs.date.getValue(),
           description: this.refs.description.getValue()
@@ -23,9 +24,9 @@ class ExhibitionForm extends React.Component {
 
         jQuery.ajax({
           type: "POST",
-          url: "http://localhost:3001/exhibitions.json",
+          url: "http://localhost:3001/artworks.json",
           data: JSON.stringify({
-            exhibition: newExhibition
+            artwork: newArtwork
           }),
           contentType: "application/json",
           dataType: "json"
@@ -41,13 +42,21 @@ class ExhibitionForm extends React.Component {
 
     render() {
         return (
-          <form onSubmit={this.createExhibition.bind(this)}>
+          <form onSubmit={this.createArtwork.bind(this)}>
             <br /><br />
             <TextField
               type="text"
               className="form-control"
+              ref="artist"
+              hintText="Who is the artist?"
+              fullWidth={true}
+            /><br /><br />
+
+            <TextField
+              type="text"
+              className="form-control"
               ref="title"
-              hintText="What is the title of the exhibition?"
+              hintText="What is the title of this work?"
               fullWidth={true}
             /><br /><br />
 
@@ -55,14 +64,14 @@ class ExhibitionForm extends React.Component {
               type="text"
               className="form-control"
               ref="date"
-              hintText="When will the exhibition be held?"
+              hintText="When was this work made?"
               fullWidth={true}
             /><br /><br />
 
             <TextField
               className="form-control"
               ref="description"
-              hintText="Describe the exhibition.."
+              hintText="Describe the artwork.."
               multiLine={true}
               rows={10}
               rowsMax={30}
@@ -80,4 +89,4 @@ class ExhibitionForm extends React.Component {
 
 }
 
-export default ExhibitionForm;
+export default ArtworkForm;

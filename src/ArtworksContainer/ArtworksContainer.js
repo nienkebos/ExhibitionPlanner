@@ -2,8 +2,8 @@ import React from 'react';
 import jQuery from 'jquery'
 
 //COMPONENTS//
-import ExhibitionForm from './ExhibitionForm';
-import Exhibitions from './Exhibitions';
+import ArtworkForm from './ArtworkForm';
+import Artworks from './Artworks';
 
 //STYLES//
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -17,20 +17,20 @@ const styles = {
   }
 }
 
-class ExhibitionsContainer extends React.Component {
+class ArtworksContainer extends React.Component {
 
     render() {
         return (
           <div>
               <div style={styles.column}>
-                <Exhibitions />
+                <Artworks />
               </div>
               <div  style={styles.column}>
-                <ExhibitionForm />
+                <ArtworkForm />
               </div>
           </div>
         );
     }
 }
 
-export default ExhibitionsContainer;
+export default ArtworksContainer;
