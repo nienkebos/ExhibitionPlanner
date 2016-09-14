@@ -6,17 +6,11 @@ import React from 'react';
 //STYLES//
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
+import {green200} from '../styles/colors';
 
-// const styles {
-//   palette: {
-//     textColor: cyan500,
-//     backgroundColor: green,
-//     fontFamily: sansSerif,
-//   },
-//   appBar: {
-//     height: 30,
-//   },
-// };
+const styles = {
+    backgroundColor: green200
+}
 
 
 class Header extends React.Component {
@@ -26,7 +20,7 @@ class Header extends React.Component {
           <AppBar
             title="Exhibition Planner"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
-
+            style={styles}
           />
         );
     }

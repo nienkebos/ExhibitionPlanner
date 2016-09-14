@@ -2,7 +2,7 @@ import React from 'react';
 import jQuery from 'jquery'
 
 
-class Exhibition extends React.Component {
+class Artwork extends React.Component {
     constructor() {
         super();
     }
@@ -10,11 +10,10 @@ class Exhibition extends React.Component {
     render() {
         return (
           <div>
-          <a href={"exhibitions/" + this.props.id}>
-            <h3>
-              {this.props.title}
-            </h3></a>
-            <p>{this.props.date}</p>
+
+            <p >
+              {this.props.artist} - {this.props.title} ({this.props.date})
+            </p>
             <p>
               {this.props.description}
             </p>
@@ -25,4 +24,4 @@ class Exhibition extends React.Component {
 }
 
 
-export default Exhibition;
+export default Artwork;

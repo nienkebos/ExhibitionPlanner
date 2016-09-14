@@ -2,29 +2,35 @@ import React from 'react';
 import jQuery from 'jquery'
 
 //COMPONENTS//
-import ExhibitionForm from './ExhibitionForm';
-import Exhibitions from './Exhibitions';
+import ArtworkForm from './ArtworkForm';
+import Artworks from './Artworks';
 
 //STYLES//
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {GridList, GridTile} from 'material-ui/GridList';
 
+const styles = {
+  column: {
+    width:'500px',
+    float: 'left',
+    margin: '0 25px',
+  }
+}
 
-
-class ExhibitionsContainer extends React.Component {
+class ArtworksContainer extends React.Component {
 
     render() {
         return (
           <div>
               <div style={styles.column}>
-                <Exhibitions />
+                <Artworks />
               </div>
               <div  style={styles.column}>
-                <ExhibitionForm />
+                <ArtworkForm />
               </div>
           </div>
         );
     }
 }
 
-export default ExhibitionsContainer;
+export default ArtworksContainer;
