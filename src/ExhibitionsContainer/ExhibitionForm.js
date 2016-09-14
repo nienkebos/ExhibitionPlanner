@@ -1,14 +1,14 @@
 import React from 'react';
 import jQuery from 'jquery'
 
-//STYLES//
-import TextField from 'material-ui/TextField'
-import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
 
-const buttonStyle = {
-  float: 'right',
-  marginLeft: '2rem',
-}
+
+const optionsStyle = {
+  maxWidth: 255,
+  marginRight: 'auto',
+};
 
 class ExhibitionForm extends React.Component {
 
@@ -16,8 +16,9 @@ class ExhibitionForm extends React.Component {
         e.preventDefault();
 
         let newExhibition = {
-          title: this.refs.title.value,
-          description: this.refs.description.value
+          title: this.refs.title.getValue(),
+          date: this.refs.date.getValue(),
+          description: this.refs.description.getValue()
         };
 
         jQuery.ajax({
@@ -40,38 +41,38 @@ class ExhibitionForm extends React.Component {
 
     render() {
         return (
-          <form onSubmit={this.createExhibition.bind(this)} >
-            <div>
-              <TextField
-                type="title"
-                className="form-control"
-                ref="title"
-                hintText="What is the title of the exhibition?" />
-            </div>
+          <form onSubmit={this.createExhibition.bind(this)}>
+            <br /><br />
+            <TextField
+              type="text"
+              className="form-control"
+              ref="title"
+              hintText="What is the title of the exhibition?"
+              fullWidth={true}
+            /><br /><br />
 
-            <div>
-              <TextField
-                type="date"
-                className="form-control"
-                ref="date"/>
-            </div>
+            <TextField
+              type="text"
+              className="form-control"
+              ref="date"
+              hintText="When will the exhibition be held?"
+              fullWidth={true}
+            /><br /><br />
 
-            <div>
-              <TextField
-                type="text"
-                className="form-control"
-                ref="description"
-                hintText="Describe the exhibition.."
-                multiLine={true}
-                rows={2}
-                rowsMax={30}/>
-            </div>
+            <TextField
+              className="form-control"
+              ref="description"
+              hintText="Describe the exhibition.."
+              multiLine={true}
+              rows={10}
+              rowsMax={30}
+              fullWidth={true}
+            /><br /><br />
 
-            <RaisedButton
+            <FlatButton
+              label="Save"
               type="submit"
-              className="btn btn-primary">
-              Create Exhibition
-            </RaisedButton>
+            />
           </form>
 
         );
