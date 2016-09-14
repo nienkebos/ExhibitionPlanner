@@ -10,9 +10,11 @@ class Exhibition extends React.Component {
     render() {
         return (
           <div>
+          <a href={"exhibitions/" + this.props.id}>
             <h3>
               {this.props.title}
-            </h3>
+            </h3></a>
+            <p>{this.props.date}</p>
             <p>
               {this.props.description}
             </p>

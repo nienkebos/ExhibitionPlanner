@@ -9,13 +9,7 @@ import Exhibitions from './Exhibitions';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {GridList, GridTile} from 'material-ui/GridList';
 
-const styles = {
-  column: {
-    width:'500px',
-    float: 'left',
-    margin: '0 25px',
-  }
-}
+
 
 class ExhibitionsContainer extends React.Component {
 

@@ -18,11 +18,7 @@ class App extends React.Component {
           <div>
             <div>
               <Header />
-            </div>
-            <div>
-              <ArtworksContainer />
-            </div>
-            <div>
+              {this.props.children}
               <Footer />
             </div>
           </div>

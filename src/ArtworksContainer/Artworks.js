@@ -1,6 +1,7 @@
 import React from 'react';
 import jQuery from 'jquery'
 import Artwork from './Artwork'
+import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 
 
 class Artworks extends React.Component {
@@ -9,7 +10,8 @@ class Artworks extends React.Component {
     }
 
     componentDidMount() {
-        jQuery.get("http://localhost:3001/artworks.json", (function(data){
+        let id = parseInt(this.props.params.id);
+        jQuery.get("http://localhost:3001/exhibitions/"+id+"/artworks", (function(data){
             this.setState({
               artworks: data,
             });

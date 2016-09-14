@@ -24,7 +24,7 @@ class ArtworkForm extends React.Component {
 
         jQuery.ajax({
           type: "POST",
-          url: "http://localhost:3001/artworks.json",
+          url: "http://localhost:3001/exhibitions/1/artworks",
           data: JSON.stringify({
             artwork: newArtwork
           }),
