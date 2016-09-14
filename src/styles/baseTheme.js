@@ -4,7 +4,7 @@ import {
   pinkA200,
   grey100, grey300, grey400, grey500,
   white, darkBlack, fullBlack,
-} from './colors';
+} from '../styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
 // import spacing from '../spacing';
 
@@ -13,7 +13,7 @@ import {fade} from 'material-ui/utils/colorManipulator';
  *  have all theme variables needed for every component. Variables not defined
  *  in a custom theme will default to these values.
  */
-export baseTheme {
+export default {
   // spacing: spacing,
   fontFamily: sansSerif,
   palette: {
@@ -32,6 +32,5 @@ export baseTheme {
     pickerHeaderColor: cyan500,
     clockCircleColor: fade(darkBlack, 0.07),
     shadowColor: fullBlack,
-
   },
 };

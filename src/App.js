@@ -1,7 +1,9 @@
 import React from 'react';
+
+//COMPONENTS//
 import ExhibitionsContainer from './ExhibitionsContainer/ExhibitionsContainer';
-import HeaderContainer from './TemplateContainer/HeaderContainer';
-import FooterContainer from './TemplateContainer/FooterContainer';
+import Header from './TemplateContainer/Header';
+import Footer from './TemplateContainer/Footer';
 
 //STYLES//
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -13,9 +15,15 @@ class App extends React.Component {
     render() {
         return (
           <div>
-              <HeaderContainer />
+            <div>
+              <Header />
+            </div>
+            <div>
               <ExhibitionsContainer />
-              <FooterContainer />
+            </div>
+            <div>
+              <Footer />
+            </div>
           </div>
         );
     }
