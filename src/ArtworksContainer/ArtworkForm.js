@@ -2,7 +2,20 @@ import React from 'react';
 import jQuery from 'jquery'
 
 import TextField from 'material-ui/TextField';
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
 import FlatButton from 'material-ui/FlatButton';
+
+const style = {
+
+  textfield: {
+    marginLeft: 20,
+    paddingTop: 10,
+  },
+  btn: {
+    float: 'right',
+  },
+};
 
 
 class ArtworkForm extends React.Component {
@@ -40,55 +53,69 @@ class ArtworkForm extends React.Component {
 
     render() {
         return (
-          <form onSubmit={this.createArtwork.bind(this)}>
-            <br /><br />
-            <TextField
-              type="text"
-              className="form-control"
-              ref="artist"
-              hintText="Who is the artist?"
-              fullWidth={true}
-            /><br /><br />
+          <Paper zDepth={1}>
+            <form onSubmit={this.createArtwork.bind(this)}>
+              <h4 style={style.textfield}>Add a new Artwork</h4>
+              <TextField
+                type="text"
+                className="form-control"
+                ref="artist"
+                hintText="Who is the artist?"
+                fullWidth={true}
+                style={style.textfield}
+                underlineShow={false}
+              />
+              <Divider />
+              <TextField
+                type="text"
+                className="form-control"
+                ref="title"
+                hintText="What is the title of this work?"
+                fullWidth={true}
+                style={style.textfield}
+                underlineShow={false}
+              />
+              <Divider />
+              <TextField
+                type="text"
+                className="form-control"
+                ref="technique"
+                hintText="Which techniques where used?"
+                fullWidth={true}
+                style={style.textfield}
+                underlineShow={false}
+              />
+              <Divider />
+              <TextField
+                type="text"
+                className="form-control"
+                ref="date"
+                hintText="When was this work made?"
+                fullWidth={true}
+                style={style.textfield}
+                underlineShow={false}
+              />
+              <Divider />
+              <TextField
+                className="form-control"
+                ref="description"
+                hintText="Describe the artwork.."
+                multiLine={true}
+                rows={10}
+                rowsMax={30}
+                fullWidth={true}
+                style={style.textfield}
+                underlineShow={false}
+              />
+              <Divider />
+              <FlatButton
+                label="Save"
+                type="submit"
+                style={style.btn}
+              />
 
-            <TextField
-              type="text"
-              className="form-control"
-              ref="title"
-              hintText="What is the title of this work?"
-              fullWidth={true}
-            /><br /><br />
-
-            <TextField
-              type="text"
-              className="form-control"
-              ref="technique"
-              hintText="Wich techniques where used?"
-              fullWidth={true}
-            /><br /><br />
-
-            <TextField
-              type="text"
-              className="form-control"
-              ref="date"
-              hintText="When was this work made?"
-              fullWidth={true}
-            /><br /><br />
-
-            <TextField
-              className="form-control"
-              ref="description"
-              hintText="Describe the artwork.."
-              multiLine={true}
-              rows={10}
-              rowsMax={30}
-              fullWidth={true}
-            /><br /><br />
-
-            <FlatButton
-              label="Save"
-              type="submit"
-            />
-          </form>
+            </form>
+          </Paper>
 
         );
     }

@@ -3,13 +3,13 @@ This is an app to store information about planned exhibitions. In one screen the
 
 
 ## Database
-1 Exhibition
+#### 1 Exhibition
   * Title:string
   * Date:string
   * Image:string
   * Description:text
 
-2 Artwork
+#### 2 Artwork
   * Artist:string
   * Title:string
   * Date:string
@@ -32,10 +32,15 @@ This is an app to store information about planned exhibitions. In one screen the
   * npm install jquery --save
 
 #### 3 Build the exhibition screen
-  * Create Components for the Exhibition screen
+  * Create Components for the Exhibition screen (exhibition, exhibitions, exhibitionform)
   * Get and Post request to render the exhibitions from and add them to the db
-  * Look for file upload in ReactJS
+  * Look for file upload in ReactJS (not yet worked this out)
 
+#### 4 Build the exhibition show screen with artworks
+  * Create Components (artwork, artworks, artworkform)
+  * Added React Router to be able to link to a showpage of one exhibition with the artworks within that particular exhibition
+  * Changed the ArtworksController in Rails to match the exhibition, to be able to add artworks to the specific exhibition and to show the exhibition title on the artworkspage
+  * Make a start with basic styling
 
 
 ## Running Locally

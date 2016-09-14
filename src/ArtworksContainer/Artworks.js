@@ -11,14 +11,14 @@ import {GridList, GridTile} from 'material-ui/GridList';
 
 const styles = {
   column: {
-    width:'calc(50% - 20px)',
+    width:'calc(50% - 30px)',
     float: 'left',
-    margin: '10px',
+    margin: '10px 15px 10px 10px',
   },
   columnright: {
-    width:'calc(50% - 20px)',
+    width:'calc(50% - 30px)',
     float: 'right',
-    margin: '10px',
+    margin: '10px 15px 10px 10px',
   }
 }
 
@@ -32,7 +32,8 @@ class Artworks extends React.Component {
         let id = parseInt(this.props.params.id);
         jQuery.get("http://localhost:3001/exhibitions/"+id+"/artworks", (function(data){
             this.setState({
-              artworks: data,
+              artworks: data.artwork,
+              exhibition: data.exhibition,
             });
         }).bind(this));
     }
@@ -51,12 +52,10 @@ class Artworks extends React.Component {
     render() {
         return (
           <div>
-            <div>
-              <div style={styles.column}>
-                {this.state.artworks.map(this.renderArtwork.bind(this))}
-              </div>
+            <div style={styles.column}>
+            <h3>{this.state.exhibition.title}</h3>
+              {this.state.artworks.map(this.renderArtwork.bind(this))}
             </div>
-
             <div style={styles.columnright}>
               <ArtworkForm id={this.props.params.id} />
             </div>
