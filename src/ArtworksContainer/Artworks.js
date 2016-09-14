@@ -1,8 +1,26 @@
 import React from 'react';
 import jQuery from 'jquery'
-import Artwork from './Artwork'
-import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 
+//COMPONENTS
+import Artwork from './Artwork'
+import ArtworkForm from './ArtworkForm'
+
+//STYLES//
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {GridList, GridTile} from 'material-ui/GridList';
+
+const styles = {
+  column: {
+    width:'calc(50% - 20px)',
+    float: 'left',
+    margin: '10px',
+  },
+  columnright: {
+    width:'calc(50% - 20px)',
+    float: 'right',
+    margin: '10px',
+  }
+}
 
 class Artworks extends React.Component {
     constructor() {
@@ -31,8 +49,11 @@ class Artworks extends React.Component {
     render() {
         return (
           <div>
-            <div>
+          <div style={styles.column}>
               {this.state.artworks.map(this.renderArtwork.bind(this))}
+            </div>
+            <div  style={styles.columnright}>
+              <ArtworkForm />
             </div>
           </div>
         )

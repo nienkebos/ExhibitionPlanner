@@ -15,6 +15,8 @@ class Artwork extends React.Component {
               {this.props.artist} - {this.props.title} ({this.props.date})
             </p>
             <p>
+              medium:{this.props.technique}
+
               {this.props.description}
             </p>
           </div>
