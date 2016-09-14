@@ -1,15 +1,14 @@
 import React from 'react';
 
-//COMPONENTS//
-
-
 //STYLES//
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import {green200} from '../styles/colors';
 
 const styles = {
-    backgroundColor: green200
+    backgroundColor: green200,
+    fontFamily: '"Alegreya Sans", sans-serif',
+
 }
 
 

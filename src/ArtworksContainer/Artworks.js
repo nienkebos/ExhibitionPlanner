@@ -1,7 +1,7 @@
 import React from 'react';
 import jQuery from 'jquery'
 
-//COMPONENTS
+//COMPONENTS//
 import Artwork from './Artwork'
 import ArtworkForm from './ArtworkForm'
 
@@ -21,6 +21,7 @@ const styles = {
     margin: '10px',
   }
 }
+
 
 class Artworks extends React.Component {
     constructor() {
@@ -42,6 +43,7 @@ class Artworks extends React.Component {
           artist={artwork.artist}
           title={artwork.title}
           date={artwork.date}
+          technique={artwork.technique}
           description={artwork.description}
         />;
     }
@@ -49,11 +51,14 @@ class Artworks extends React.Component {
     render() {
         return (
           <div>
-          <div style={styles.column}>
-              {this.state.artworks.map(this.renderArtwork.bind(this))}
+            <div>
+              <div style={styles.column}>
+                {this.state.artworks.map(this.renderArtwork.bind(this))}
+              </div>
             </div>
-            <div  style={styles.columnright}>
-              <ArtworkForm />
+
+            <div style={styles.columnright}>
+              <ArtworkForm id={this.props.params.id} />
             </div>
           </div>
         )

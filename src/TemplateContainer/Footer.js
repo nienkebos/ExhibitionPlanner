@@ -1,8 +1,5 @@
 import React from 'react';
 
-//COMPONENTS//
-
-
 //STYLES//
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -10,7 +7,8 @@ const styles = {
   footer: {
     padding: 25,
     clear: 'both',
-    backgroundColor: '#ccc'
+    backgroundColor: '#ccc',
+    fontFamily: '"Alegreya Sans", sans-serif',
   }
 }
 
