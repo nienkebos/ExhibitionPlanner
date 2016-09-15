@@ -10,7 +10,7 @@ class Artwork extends React.Component {
     render() {
         return (
           <div>
-            <p >
+            <p>
               {this.props.artist} - {this.props.title} ({this.props.date})
             </p>
             <p>

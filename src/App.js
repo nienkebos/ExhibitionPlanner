@@ -8,7 +8,6 @@ import Footer from './TemplateContainer/Footer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {GridList, GridTile} from 'material-ui/GridList';
 
-
 class App extends React.Component {
 
     render() {
