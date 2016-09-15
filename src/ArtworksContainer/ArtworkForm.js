@@ -1,8 +1,10 @@
-import React from 'react';
+import React from 'react'
 import jQuery from 'jquery'
+import Dropzone from 'react-dropzone'
 
-import TextField from 'material-ui/TextField';
-import FlatButton from 'material-ui/FlatButton';
+
+import TextField from 'material-ui/TextField'
+import FlatButton from 'material-ui/FlatButton'
 
 
 class ArtworkForm extends React.Component {
@@ -30,7 +32,7 @@ class ArtworkForm extends React.Component {
           dataType: "json"
 
         }).done(function( data ) {
-          console.log('successfully added',data);
+          console.log('successfully added', data);
         })
         .fail(function(error) {
           console.log(error);
