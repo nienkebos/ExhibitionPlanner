@@ -1,5 +1,7 @@
-import React from 'react';
+import React from 'react'
 import jQuery from 'jquery'
+import Dropzone from 'react-dropzone'
+import request from 'superagent';
 
 import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
@@ -7,7 +9,6 @@ import Paper from 'material-ui/Paper';
 import FlatButton from 'material-ui/FlatButton';
 
 const style = {
-
   textfield: {
     marginLeft: 20,
     paddingTop: 10,
@@ -19,37 +20,48 @@ const style = {
 
 
 class ArtworkForm extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        files: []
+      };
+    }
 
     createArtwork(e){
         e.preventDefault();
 
-        let newArtwork = {
-          artist: this.refs.artist.getValue(),
-          title: this.refs.title.getValue(),
-          date: this.refs.date.getValue(),
-          technique: this.technique.date.getValue(),
-          description: this.refs.description.getValue()
-        };
-
         let id = parseInt(this.props.id);
 
-        jQuery.ajax({
-          type: "POST",
-          url: "http://localhost:3001/exhibitions/"+id+"/artworks",
-          data: JSON.stringify({
-            artwork: newArtwork
-          }),
-          contentType: "application/json",
-          dataType: "json"
+        let req = request
+          .post(`http://localhost:3001/exhibitions/${id}/artworks.json`)
 
-        }).done(function( data ) {
-          console.log('successfully added',data);
+        this.state.files.forEach((file) => {
+          req.attach('artwork[image]', file)
         })
-        .fail(function(error) {
-          console.log(error);
-        });
+
+        req.field('artwork[artist]', this.refs.artist.getValue())
+            .field('artwork[title]', this.refs.title.getValue())
+            .field('artwork[date]', this.refs.date.getValue())
+            .field('artwork[technique]', this.refs.technique.getValue())
+            .field('artwork[description]', this.refs.description.getValue())
+            .end((err, response) => {
+              if (response.ok) {
+                console.log(response.body)
+              }
+
+              if (err) {
+                console.error(err)
+              }
+            })
       }
 
+      onDrop(files) {
+        console.log('Received files: ', files);
+        this.setState({
+          files: files
+        });
+      }
 
     render() {
         return (
@@ -108,12 +120,20 @@ class ArtworkForm extends React.Component {
                 underlineShow={false}
               />
               <Divider />
+
+              <Dropzone
+                accept="image/*"
+                multiple={false}
+                onDrop={this.onDrop.bind(this)}
+                style={style.textfield}
+                  <p>Click to add an image of this artwork.</p>
+              </Dropzone>
+
               <FlatButton
                 label="Save"
                 type="submit"
                 style={style.btn}
               />
-
             </form>
           </Paper>
 
