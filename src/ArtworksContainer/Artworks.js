@@ -26,6 +26,10 @@ const styles = {
 class Artworks extends React.Component {
     constructor() {
       super();
+
+      this.state = {
+        artworks: []
+      };
     }
 
     componentDidMount() {

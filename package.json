@@ -59,6 +59,7 @@
     "react-dropzone": "^3.6.0",
     "react-inline-grid": "^0.5.3",
     "react-router": "^2.8.1",
-    "react-tap-event-plugin": "^1.0.0"
+    "react-tap-event-plugin": "^1.0.0",
+    "superagent": "^2.2.0"
   }
 }
