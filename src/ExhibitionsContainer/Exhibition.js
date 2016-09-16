@@ -2,6 +2,7 @@ import React from 'react';
 import jQuery from 'jquery'
 
 
+
 class Exhibition extends React.Component {
     constructor() {
         super();
@@ -10,7 +11,8 @@ class Exhibition extends React.Component {
     render() {
         return (
           <div>
-          <a href={"exhibitions/" + this.props.id}>
+          <a className="link" href={"exhibitions/" + this.props.id}
+          style={{color:'black', textDecoration: 'none', hover:'#ccc'}}>
             <h3>
               {this.props.title}
             </h3></a>

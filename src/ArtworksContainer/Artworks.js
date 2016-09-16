@@ -28,19 +28,26 @@ class Artworks extends React.Component {
       super();
 
       this.state = {
-        artworks: []
+        artworks: [],
+        exhibition: []
       };
     }
 
     componentDidMount() {
         let id = parseInt(this.props.params.id);
+
         jQuery.get("http://localhost:3001/exhibitions/"+id+"/artworks", (function(data){
+          console.log('data', data);
             this.setState({
               artworks: data.artwork,
               exhibition: data.exhibition,
             });
         }).bind(this));
     }
+    //
+    // updateArtwork() {
+    //   this.props.forceUpdate();
+    // }
 
     renderArtwork(artwork, index) {
         return <Artwork
@@ -49,9 +56,17 @@ class Artworks extends React.Component {
           title={artwork.title}
           date={artwork.date}
           technique={artwork.technique}
+          image={artwork.image}
           description={artwork.description}
+
         />;
     }
+
+
+    // updateArtwork: function(data) {
+    //   this.state.artworks.push(data);
+    //   this.setState(this);
+    // }
 
     render() {
         return (
@@ -68,5 +83,7 @@ class Artworks extends React.Component {
     }
 
 }
+
+// onChange={this.updateArtwork.bind(this)}
 
 export default Artworks;

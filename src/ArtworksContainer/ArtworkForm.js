@@ -1,12 +1,13 @@
 import React from 'react'
 import jQuery from 'jquery'
 import Dropzone from 'react-dropzone'
-import request from 'superagent';
+import request from 'superagent'
 
-import TextField from 'material-ui/TextField';
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
-import FlatButton from 'material-ui/FlatButton';
+//STYLES//
+import TextField from 'material-ui/TextField'
+import Divider from 'material-ui/Divider'
+import Paper from 'material-ui/Paper'
+import FlatButton from 'material-ui/FlatButton'
 
 const style = {
   textfield: {
@@ -20,8 +21,8 @@ const style = {
 
 
 class ArtworkForm extends React.Component {
-    constructor(props) {
-      super(props);
+    constructor() {
+      super();
 
       this.state = {
         files: []
@@ -32,7 +33,6 @@ class ArtworkForm extends React.Component {
         e.preventDefault();
 
         let id = parseInt(this.props.id);
-
         let req = request
           .post(`http://localhost:3001/exhibitions/${id}/artworks.json`)
 
@@ -47,17 +47,16 @@ class ArtworkForm extends React.Component {
             .field('artwork[description]', this.refs.description.getValue())
             .end((err, response) => {
               if (response.ok) {
-                console.log(response.body)
+                console.log('Created', response.body)
               }
-
               if (err) {
-                console.error(err)
+                console.log(err)
               }
             })
+        // this.onChange().bind(this);
       }
 
       onDrop(files) {
-        console.log('Received files: ', files);
         this.setState({
           files: files
         });
@@ -109,6 +108,7 @@ class ArtworkForm extends React.Component {
               />
               <Divider />
               <TextField
+                type="text"
                 className="form-control"
                 ref="description"
                 hintText="Describe the artwork.."
@@ -125,7 +125,7 @@ class ArtworkForm extends React.Component {
                 accept="image/*"
                 multiple={false}
                 onDrop={this.onDrop.bind(this)}
-                style={style.textfield}
+                style={style.textfield}>
                   <p>Click to add an image of this artwork.</p>
               </Dropzone>
 
